@@ -1,0 +1,10 @@
+version: "3"
+services:
+  application:
+    build:
+      context: .
+      dockerfile: dockerfile_args
+      args:
+        bind: 1
+        url: google.com
+    contine_name: mytalp

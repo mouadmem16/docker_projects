@@ -1,0 +1,5 @@
+FROM alpine:latest
+ARG url
+ARG bind
+RUN ["echo", "$bind"]
+ENTRYPOINT ping $url

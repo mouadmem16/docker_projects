@@ -1,0 +1,22 @@
+version: "3"
+services:
+  node1:
+    image: nodeserver:1
+    container_name: node1-app
+    environment:
+      - name=app1
+
+  node2:
+    image: nodeserver:1
+    container_name: node2-app
+    environment:
+      - name=app2
+
+  nginx:
+    image: nginxproxy:1
+    container_name: nginx-proxy
+    ports:
+      - 3333:80
+    depends_on:
+      - node1
+      - node2
